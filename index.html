@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wazuh – SIEM LAB</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="description">
+      <h1>Wazuh File Integrity Monitoring Lab</h1>
+      <p>Este projeto demonstra a implementação de File Integrity Monitoring (FIM) utilizando o Wazuh para detectar alterações em arquivos dentro de um sistema monitorado.
+O laboratório simula um cenário de monitoramento realizado em um Security Operations Center (SOC).</p>
+    </div>
+    <div class="objective">
+      <h2>Objetivo</h2>
+      <p>O objetivo deste laboratório é demonstrar como o File Integrity Monitoring pode identificar alterações não autorizadas em arquivos do sistema.
+O ambiente monitora eventos como criação, modificação e exclusão de arquivos, gerando alertas de segurança.</p>
+    </div>
+    <div class="architecture">
+        <h2>Arquitetura do Laboratório</h2>
+        <p>
+O ambiente consiste em um servidor Wazuh responsável pela análise de logs e um endpoint monitorado com o agente Wazuh instalado.
+O agente coleta eventos do sistema e envia as informações para o servidor, onde os dados são analisados e transformados em alertas.
+</p>
+    <img src="assets/Infraestrutura-WAZUHLAB.png" alt="flowchart laying out the infrastructure of the project">
+    </div>
+    <div class="environment">
+        <h2>Configuração do Ambiente</h2>
+        <p>
+O Wazuh Manager foi instalado em um servidor Linux e configurado para receber eventos de um agente instalado no sistema monitorado.
+O módulo de File Integrity Monitoring foi configurado para monitorar diretórios específicos do sistema.
+</p>
+        <div class="wazuhmanager">
+            <h3>1 – Wazuh Manager</h3>
+            <p>O print abaixo, mostra o daemon com status enabled, indicando o funcionamento correto.</p>
+            <figure>
+                <img src="assets/managerenabledWAZUH.jpeg" id="wazuh-manager-enabled" alt="wazuh manager enabled">
+                <figcaption>Print do Terminal do VM Ubuntu Server</figcaption>
+            </figure>
+        </div>
+        <div class="wazuhindexer">
+            <h3>2 – Wazuh Indexer</h3>
+            <p>De mesma maneira, abaixo o daemon com status enabled, indicando novamente um funcionamento de acordo com o esperado.</p>
+            <figure>
+                <img src="assets/indexerenabledWAZUH.jpeg" id="wazuh-indexer-enabled" alt="wazuh indexer enabled">
+                <figcaption>Print do Terminal do VM Ubuntu Server</figcaption>
+            </figure>
+        </div>
+        <div class="wazuhdashboard">
+            <h3>3 – Wazuh Dashboard</h3>
+            <p>De mesmo modo, daemon de dashboard enabled</p>
+            <figure>
+                <img src="assets/dashboardenabledWAZUH.jpeg" id="wazuh-dashboard-enabled" alt="wazuh dashboard enabled">
+                <figcaption>Print do Terminal do VM Ubuntu Server</figcaption>
+            </figure>
+        </div>
+        <div class="agentinstallation">
+            <h3>Instalação do Agente (MacBook)</h3>
+            <p>Foi realizada a instalação de um agente do Wazuh em um MacBook pessoal localizado na mesma rede do servidor. O agente foi configurado para se comunicar com o endereço IP do servidor Wazuh Manager, conforme demonstrado na imagem abaixo.</p>
+            <figure>
+                <img src="assets/agentinstallationWAZUH.jpeg" alt="line of code installing the wazuh agent in macbook terminal">
+                <figcaption>Print do Terminal do Agente (MacBook)</figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div class="implementation">
+        <div>
+            <h2>Implementação do FIM</h2>
+            <p>O módulo FIM foi configurado para acompanhar alterações em arquivos dentro de diretórios monitorados (Conforme Imagem).
+                O sistema detecta eventos como criação, modificação e exclusão de arquivos.
+                Quando uma alteração ocorre, o evento é enviado ao servidor Wazuh para análise e geração de alertas.</p>
+            <figure>
+                <img src="assets/configfileintegrityWAZUH.jpeg" alt="agent configuration file, showing directories being monitored">
+                <figcaption>A imagem ilustra o caminho /User/julionunes sendo monitorado.<br>Indica também, que o FIM está ativo, e que a cada 60 segundos, ele verfica se existem alterações nos diretórios apontados.<br><br>Print do Terminal do Agente (MacBook)</figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div class="detection">
+        <div class="filechange"></div>
+            <h2>Criaçao do Arquivo "Malicioso"</h2>
+            <p>Para simular atividade suspeita, um arquivo foi criado e posteriormente modificado dentro de um diretório monitorado.
+                O Wazuh detectou a alteração e gerou um alerta indicando a modificação no sistema.</p>
+            <figure>
+                <img src="assets/filechangeWAZUH.jpeg" alt="macbook terminal creating a file malware-file-test">
+                <figcaption>Imagem ilustra a criação do arquivo, e a adição de conteúdo através do comando <em>echo</em>.<br>Print do Terminal do Agente (MacBook)</figcaption>
+            </figure>
+        <div>
+            <h2>Detecção no Dashboard – Wazuh</h2>
+            <p>A detecção do log foi feita pelo dashboard, visualizado pelo host (Windows 11). Nessa etapa, em um ambiente organizacional, se realiza a análise do log juntamente com outras ferramentas disponibilizadas pela infraestrutura de um SOC</p>
+            <figure>
+                <img src="assets/logforanalysisWAZUH.jpeg" alt="a brief vision of the alert">
+                <figcaption>Imagem relata informações do alerta como: Caminho (/Users/julionunes/malware-file-test), informações de hashes (MD5, SHA1, SHA256), datas, usuário, permissões de arquivo e outros.<br>Print do Wazuh Dashboard – Dentro do briefing do alerta</figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div class="conclusion">
+        <h2>Conclusão</h2>
+        <p>Este laboratório demonstra como o File Integrity Monitoring pode ser utilizado para identificar alterações suspeitas em arquivos
+e auxiliar analistas de segurança na detecção de possíveis incidentes dentro de um ambiente monitorado. – Essa atividade é essencial dentro de um SOC, pois arquivos críticos são alvos de muitos hackers.</p>
+        <h2>Um rápido fluxo – Resumo</h2>
+        <figure>
+            <img src="assets/FluxoWAZUHLAB.png" alt="a flowchart showing a flux about this project">
+            <figcaption>Fluxo idealizado para este projeto. – por mim, Julio Nunes</figcaption>
+        </figure>
+    </div>
+
+
+  </body>
+</html>
