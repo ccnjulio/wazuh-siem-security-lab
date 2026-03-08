@@ -167,61 +167,72 @@ body footer {
     text-align: center;
 }
 
-/* ===== MOBILE FIX ===== */
+/* ===== MOBILE RESPONSIVE FIX ===== */
 
 @media (max-width: 768px) {
 
-/* Menu */
-.navbar ul {
+/* MENU */
+.navbar ul{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 0;
 }
 
-.navbar li {
-    margin: 5px 8px;
+.navbar li{
+    list-style: none;
 }
 
-.navbar a {
-    font-size: 14px;
+.navbar a{
+    font-size: 15px;
 }
 
-/* Título */
-h1 {
-    font-size: 26px;
+/* TITULO */
+h1{
+    font-size: 24px;
     text-align: center;
-    padding: 10px;
+    margin: 20px 10px;
 }
 
-/* Containers das seções */
+/* SEÇÕES (CARDS) */
 .description,
 .objective,
 .architecture,
 .environment,
 .implementation,
 .detection,
-.conclusion {
-    margin: 10px;
-    padding: 15px;
+.conclusion{
+    margin: 12px;
+    padding: 18px;
 }
 
-/* Imagens responsivas */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Figcaption menor */
-figcaption {
-    font-size: 14px;
-}
-
-/* Texto mais confortável */
-p {
+/* TEXTO */
+p{
     font-size: 16px;
     line-height: 1.6;
 }
 
+/* IMAGENS */
+img{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
 }
+
+/* FIGCAPTION */
+figcaption{
+    font-size: 14px;
+    text-align: center;
+}
+
+/* DIAGRAMA ESPECÍFICO */
+.architecture img{
+    max-width: 90%;
+}
+
+}
+}
+
 
