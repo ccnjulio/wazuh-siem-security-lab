@@ -166,3 +166,62 @@ body footer {
     padding: 10px;
     text-align: center;
 }
+
+/* ===== MOBILE FIX ===== */
+
+@media (max-width: 768px) {
+
+/* Menu */
+.navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+}
+
+.navbar li {
+    margin: 5px 8px;
+}
+
+.navbar a {
+    font-size: 14px;
+}
+
+/* Título */
+h1 {
+    font-size: 26px;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Containers das seções */
+.description,
+.objective,
+.architecture,
+.environment,
+.implementation,
+.detection,
+.conclusion {
+    margin: 10px;
+    padding: 15px;
+}
+
+/* Imagens responsivas */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Figcaption menor */
+figcaption {
+    font-size: 14px;
+}
+
+/* Texto mais confortável */
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+}
+
