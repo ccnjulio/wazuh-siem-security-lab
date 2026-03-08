@@ -5,19 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wazuh – SIEM LAB</title>
     <link rel="stylesheet" href="styles.css">
+    <nav class="navbar">
+        <ul>
+            <li><a href="#ddescriptionid">Descrição</a></li>
+            <li><a href="#objectiveid">Objetivo</a></li>
+            <li><a href="#architectureid">Arquitetura do Laboratório</a></li>
+            <li><a href="#environmentid">Configuração do Ambiente</a></li>
+            <li><a href="#implementationid">Implementação do FIM</a></li>
+            <li><a href="#detectionid">Criação do Arquivo "Malicioso"</a></li>
+            <li><a href="#conclusionid">Conclusão</a></li>
+        </ul>
+    </nav>
   </head>
   <body>
-    <div class="description">
-      <h1>Wazuh File Integrity Monitoring Lab</h1>
-      <p>Este projeto demonstra a implementação de File Integrity Monitoring (FIM) utilizando o Wazuh para detectar alterações em arquivos dentro de um sistema monitorado.
+    <h1>Wazuh File Integrity Monitoring Lab</h1>
+    <div class="description" id="descriptionid">
+        <h2>Descrição</h2>
+        <p>Este projeto demonstra a implementação de File Integrity Monitoring (FIM) utilizando o Wazuh para detectar alterações em arquivos dentro de um sistema monitorado.
 O laboratório simula um cenário de monitoramento realizado em um Security Operations Center (SOC).</p>
     </div>
-    <div class="objective">
-      <h2>Objetivo</h2>
-      <p>O objetivo deste laboratório é demonstrar como o File Integrity Monitoring pode identificar alterações não autorizadas em arquivos do sistema.
+    <div class="objective" id="objectiveid">
+        <h2>Objetivo</h2>
+        <p>O objetivo deste laboratório é demonstrar como o File Integrity Monitoring pode identificar alterações não autorizadas em arquivos do sistema.
 O ambiente monitora eventos como criação, modificação e exclusão de arquivos, gerando alertas de segurança.</p>
     </div>
-    <div class="architecture">
+    <div class="architecture" id="architectureid">
         <h2>Arquitetura do Laboratório</h2>
         <p>
 O ambiente consiste em um servidor Wazuh responsável pela análise de logs e um endpoint monitorado com o agente Wazuh instalado.
@@ -25,7 +37,7 @@ O agente coleta eventos do sistema e envia as informações para o servidor, ond
 </p>
     <img src="assets/Infraestrutura-WAZUHLAB.png" alt="flowchart laying out the infrastructure of the project">
     </div>
-    <div class="environment">
+    <div class="environment" id="environmentid">
         <h2>Configuração do Ambiente</h2>
         <p>
 O Wazuh Manager foi instalado em um servidor Linux e configurado para receber eventos de um agente instalado no sistema monitorado.
@@ -65,7 +77,7 @@ O módulo de File Integrity Monitoring foi configurado para monitorar diretório
         </div>
     </div>
 
-    <div class="implementation">
+    <div class="implementation" id="implementationid">
         <div>
             <h2>Implementação do FIM</h2>
             <p>O módulo FIM foi configurado para acompanhar alterações em arquivos dentro de diretórios monitorados (Conforme Imagem).
@@ -78,7 +90,7 @@ O módulo de File Integrity Monitoring foi configurado para monitorar diretório
         </div>
     </div>
 
-    <div class="detection">
+    <div class="detection" id="detectionid">
         <div class="filechange"></div>
             <h2>Criaçao do Arquivo "Malicioso"</h2>
             <p>Para simular atividade suspeita, um arquivo foi criado e posteriormente modificado dentro de um diretório monitorado.
@@ -97,7 +109,7 @@ O módulo de File Integrity Monitoring foi configurado para monitorar diretório
         </div>
     </div>
 
-    <div class="conclusion">
+    <div class="conclusion" id="conclusionid">
         <h2>Conclusão</h2>
         <p>Este laboratório demonstra como o File Integrity Monitoring pode ser utilizado para identificar alterações suspeitas em arquivos
 e auxiliar analistas de segurança na detecção de possíveis incidentes dentro de um ambiente monitorado. – Essa atividade é essencial dentro de um SOC, pois arquivos críticos são alvos de muitos hackers.</p>
@@ -108,6 +120,13 @@ e auxiliar analistas de segurança na detecção de possíveis incidentes dentro
         </figure>
     </div>
 
-
+    <footer>
+        <address>
+            <h2>HTML desenvolvido sem auxílio de IA.</h2>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/julio-nunes-b97331205/">Conecte-se comigo! </a></p>
+            <p>Email: <a href="mailto:jccnunes01@gmail.com">jccnunes01@gmail.com</a></p>
+            <p>Celular: +55 51 98032-5627</p>
+        </address>
+    </footer>
   </body>
 </html>
