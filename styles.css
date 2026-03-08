@@ -167,35 +167,8 @@ body footer {
     text-align: center;
 }
 
-/* ===== MOBILE RESPONSIVE FIX ===== */
+@media (max-width: 768px){
 
-@media (max-width: 768px) {
-
-/* MENU */
-.navbar ul{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 0;
-}
-
-.navbar li{
-    list-style: none;
-}
-
-.navbar a{
-    font-size: 15px;
-}
-
-/* TITULO */
-h1{
-    font-size: 24px;
-    text-align: center;
-    margin: 20px 10px;
-}
-
-/* SEÇÕES (CARDS) */
 .description,
 .objective,
 .architecture,
@@ -203,36 +176,12 @@ h1{
 .implementation,
 .detection,
 .conclusion{
-    margin: 12px;
-    padding: 18px;
-}
-
-/* TEXTO */
-p{
-    font-size: 16px;
-    line-height: 1.6;
-}
-
-/* IMAGENS */
-img{
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 15px auto;
-}
-
-/* FIGCAPTION */
-figcaption{
-    font-size: 14px;
-    text-align: center;
-}
-
-/* DIAGRAMA ESPECÍFICO */
-.architecture img{
-    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 }
 }
+
 
 
