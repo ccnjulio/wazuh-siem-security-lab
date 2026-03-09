@@ -6,6 +6,10 @@ h1 ,h2{
     text-align: center;
 }
 
+h1 {
+    margin-top: 50px;
+}
+
 body {
     background-color: whitesmoke;
 }
@@ -15,7 +19,7 @@ img {
     display: block;
     height: auto;
     margin: 0 auto;
-    border-radius: 10px;
+
 }
 
 .navbar {
@@ -167,29 +171,66 @@ body footer {
     text-align: center;
 }
 
-@media (max-width: 768px){
+.subtitle {
+    text-align: center;
+    margin-top: -20px;
+    margin-bottom: 50px;
+}
 
+/* ===== MOBILE FIX ===== */
+
+@media (max-width: 768px) {
+
+/* Menu */
+.navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+}
+
+.navbar li {
+    margin: 5px 8px;
+}
+
+.navbar a {
+    font-size: 14px;
+}
+
+/* Título */
+h1 {
+    font-size: 26px;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Containers das seções */
 .description,
 .objective,
 .architecture,
 .environment,
 .implementation,
 .detection,
-.conclusion{
-    margin-left: auto;
-    margin-right: auto;
+.conclusion {
+    margin: 10px;
+    padding: 15px;
+}
+
+/* Imagens responsivas */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Figcaption menor */
+figcaption {
+    font-size: 14px;
+}
+
+/* Texto mais confortável */
+p {
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 }
-}
-
-
-
-
-
-
-
-
-
-
-
